@@ -151,6 +151,22 @@ const press = [
     </div>
   </Section>
 
+  <Section title="Quick facts">
+    <dl class="grid max-w-3xl gap-x-10 gap-y-4 sm:grid-cols-2 lg:grid-cols-4">
+      {[
+        ['4', 'teams'],
+        ['2', 'space missions'],
+        ['3+', 'research grants won'],
+        ['20+', 'members per semester'],
+      ].map(([big, label]) => (
+        <div class="border-t border-line pt-3">
+          <dt class="text-sm text-slate">{label}</dt>
+          <dd class="font-display text-3xl text-white">{big}</dd>
+        </div>
+      ))}
+    </dl>
+  </Section>
+
   <Section title="Who we work with">
     <div class="space-y-4">
       <OrgList label="Partners and mentors:">
