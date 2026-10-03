@@ -13,11 +13,11 @@ import { PageIntro, Section, ContactForm, MailingListForm, contactEmail, socialL
       join the NSL Discord server, available on the NU Student Hub on Discord.
     </span>
     <span class="mt-4 block">
-      <strong class="text-white">Researcher, collaborator, press, or recruiter?</strong> Please email us at
-      <a href={`mailto:${contactEmail}`} class="[overflow-wrap:anywhere]">{contactEmail}</a> or use the form below.
+      <strong class="text-white">Researcher, collaborator, press, or recruiter?</strong> Please email us
+      at <a href={`mailto:${contactEmail}`} class="[overflow-wrap:anywhere]">{contactEmail}</a> or use the form below.
     </span>
     <span class="mt-4 block">
-      We’re also on
+      We’re also on{' '}
       {socialLinks.map(({ href, label }, i) => (
         <>{i > 0 && ' and '}<a href={href}>{label}</a></>
       ))}.
