@@ -1,6 +1,7 @@
 ---
 import Logo from '../../assets/brand/nsl-logo-light.svg';
-import { contactEmail, socialLinks } from './links';
+import Email from '../contact/Email.astro';
+import { socialLinks } from './links';
 ---
 
 <footer class="mx-auto w-full max-w-6xl px-5 pb-10">
@@ -11,7 +12,7 @@ import { contactEmail, socialLinks } from './links';
         <span class="text-alice">Northeastern Satellite Lab</span>, a student club at Northeastern University in Boston.
       </p>
       <p>
-        <a href={`mailto:${contactEmail}`} class="[overflow-wrap:anywhere]">{contactEmail}</a>
+        <Email />
         {socialLinks.map(({ href, label }) => (
           <>{' · '}<a href={href}>{label}</a></>
         ))}

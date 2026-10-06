@@ -113,7 +113,7 @@ The "In the news" list is the `press` array at the top of `src/pages/index.astro
 All in `src/components/site/links.ts`:
 
 - `navLinks` is the top nav. Adding a page doesn't add it to the nav automatically.
-- `contactEmail` is used on the contact page, the home page and the forms.
+- `contactEmail` is an object with `text` (what visitors see, written with `{at}` and `{dot}`), `user` and `domain`. It's split up on purpose so the full address never appears in the HTML for spambots to scrape. Use `<Email />` to show the address as a link, and join `user` and `domain` in a script if you need the real address. Never put the full address in an `href`. It's used in the footer, the contact page and both forms.
 - `socialLinks` are the Instagram and LinkedIn links on the contact page.
 - `joinLinks` are the NUEngage, Discord and interest-form links shown on This Semester. Check these every semester, since Discord invites and Google Forms get replaced.
 
@@ -146,7 +146,7 @@ Tailwind utility classes go straight in the markup. The palette is defined in `s
 
 ## Forms
 
-The contact form and mailing list form have no backend. Submitting opens the visitor's email app with a pre-filled message to `contactEmail`. Real sign-ups need a service added later (Cloudflare Workers can handle that).
+The contact form and mailing list form have no backend. Submitting opens the visitor's email app with a pre-filled message to the contact address, which the form script assembles from `contactEmail.user` and `contactEmail.domain`. Real sign-ups need a service added later (Cloudflare Workers can handle that).
 
 ## Deploying
 

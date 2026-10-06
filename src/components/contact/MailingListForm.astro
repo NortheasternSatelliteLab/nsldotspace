@@ -3,7 +3,7 @@
 import { contactEmail } from '../site/links';
 ---
 
-<form data-mailing-form data-to={contactEmail} class="flex max-w-lg flex-col gap-3 sm:flex-row" novalidate>
+<form data-mailing-form data-user={contactEmail.user} data-domain={contactEmail.domain} class="flex max-w-lg flex-col gap-3 sm:flex-row" novalidate>
   <input
     type="email"
     name="email"
@@ -26,7 +26,7 @@ import { contactEmail } from '../site/links';
       const email = new FormData(form).get('email')?.toString().trim();
       if (!email) return;
       const body = encodeURIComponent(`Please add me to the NSL mailing list: ${email}`);
-      window.location.href = `mailto:${form.dataset.to}?subject=Mailing%20list%20signup&body=${body}`;
+      window.location.href = `mailto:${form.dataset.user}@${form.dataset.domain}?subject=Mailing%20list%20signup&body=${body}`;
       const done = form.nextElementSibling;
       if (done instanceof HTMLElement) done.hidden = false;
     });

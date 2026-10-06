@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { PageIntro, Section, ContactForm, MailingListForm, contactEmail, socialLinks } from '../components';
+import { PageIntro, Section, ContactForm, MailingListForm, Email, socialLinks } from '../components';
 ---
 
 <BaseLayout
@@ -14,7 +14,7 @@ import { PageIntro, Section, ContactForm, MailingListForm, contactEmail, socialL
     </span>
     <span class="mt-4 block">
       <strong class="text-white">Researcher, collaborator, press, or recruiter?</strong> Please email us
-      at <a href={`mailto:${contactEmail}`} class="[overflow-wrap:anywhere]">{contactEmail}</a> or use the form below.
+      at <Email /> or use the form below.
     </span>
     <span class="mt-4 block">
       We’re also on{' '}

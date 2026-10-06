@@ -6,7 +6,11 @@ export const navLinks = [
   { href: '/contact', label: 'Contact' },
 ];
 
-export const contactEmail = 'northeasternsatellitelab {at} gmail {dot} com';
+export const contactEmail = {
+  text: 'northeasternsatellitelab {at} gmail {dot} com',
+  user: 'northeasternsatellitelab',
+  domain: 'gmail.com',
+};
 
 export const socialLinks = [
   { href: 'https://www.instagram.com/nu.satlab/', label: 'Instagram' },

@@ -1,6 +1,24 @@
 ---
-// The club's contact address as a mailto link.
+// The club's contact address as a mailto link. The HTML only has the obfuscated text and the two
+// halves of the address; the script builds the real mailto: when someone hovers, focuses, or clicks.
 import { contactEmail } from '../site/links';
 ---
 
-<a href={`mailto:${contactEmail}`} class="[overflow-wrap:anywhere]">{contactEmail}</a>
+<a
+  href="/contact"
+  data-email-user={contactEmail.user}
+  data-email-domain={contactEmail.domain}
+  class="[overflow-wrap:anywhere]">{contactEmail.text}</a
+>
+
+<script>
+  const arm = (event: Event) => {
+    const link = (event.target as Element).closest<HTMLAnchorElement>('a[data-email-user]');
+    if (link) link.href = `mailto:${link.dataset.emailUser}@${link.dataset.emailDomain}`;
+  };
+
+  // Set the href before the browser follows the link or shows it in the status bar.
+  for (const type of ['pointerover', 'focusin', 'touchstart', 'click']) {
+    document.addEventListener(type, arm, { passive: true });
+  }
+</script>
