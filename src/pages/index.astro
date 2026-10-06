@@ -3,8 +3,8 @@ import { Image } from 'astro:assets';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ArrowRight from '@lucide/astro/icons/arrow-right';
 import ArrowUpRight from '@lucide/astro/icons/arrow-up-right';
-import hero from '../assets/photos/nasa-cubesats-over-earth.jpg';
-import deployer from '../assets/photos/nasa-cubesat-deployer.jpg';
+import hero from '../assets/photos/proves/people-proves.png';
+import provesWork from '../assets/photos/proves/proves-work.png';
 import { Section, Org, OrgList, MailingListForm, Figure, TeraLinkLinks, CassegrainDish, DewsatSwath } from '../components';
 import { teams } from '../components/site/teams';
 import AlumniEmployers from '../partials/alumni-employers.mdx';
@@ -15,7 +15,7 @@ const work = [
     name: 'PROVES Atlas',
     status: 'In orbit since April 2026',
     what: 'Our first satellite. A camera CubeSat, built by about 15 students in under a year and deployed from the ISS with four other university satellites.',
-    photo: deployer,
+    photo: provesWork,
   },
   {
     href: '/projects/teralink-1',
@@ -91,14 +91,14 @@ const press = [
     <figure class="mt-12 sm:mt-14">
       <Image
         src={hero}
-        alt="Two CubeSats drift away from the International Space Station above a cloud-covered Earth"
+        alt="Five club members look up at the camera from around a table covered in CubeSat boards and tools"
         widths={[640, 1024, 1600]}
         sizes="(min-width: 1152px) 1112px, 100vw"
         loading="eager"
         fetchpriority="high"
-        class="aspect-[3/2] w-full rounded-sm object-cover object-[50%_60%] sm:aspect-[21/9]"
+        class="aspect-[3/2] w-full rounded-sm object-cover object-[50%_35%] sm:aspect-[21/9]"
       />
-      <figcaption class="mt-2 text-sm text-slate">CubeSats leave the International Space Station, August 2014. Photo: NASA.</figcaption>
+      <figcaption class="mt-2 text-sm text-slate">Members of the PROVES Atlas team with the satellite's boards and flight hardware. Photo: Margot Murphy/The Huntington News.</figcaption>
     </figure>
   </section>
 

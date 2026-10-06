@@ -9,6 +9,10 @@ lead: Northeastern’s first satellite. A student-built camera CubeSat, deployed
 import { Image } from 'astro:assets';
 import { Section, Mission, Figure } from '../../components';
 import cubesatEjected from '../../assets/photos/nasa-cubesat-ejected.jpg';
+import peopleProves from '../../assets/photos/proves/people-proves.png';
+import provesPcb from '../../assets/photos/proves/proves-pcb.png';
+import provesWork from '../../assets/photos/proves/proves-work.png';
+import provesDisplay from '../../assets/photos/proves/proves-display.png';
 
 <Mission
   id="overview"
@@ -23,8 +27,8 @@ import cubesatEjected from '../../assets/photos/nasa-cubesat-ejected.jpg';
     { big: 'Northrop Grumman Cygnus XL', label: 'launch vehicle' },
   ]}
 >
-<Figure slot="figure" caption="A student-built CubeSat leaves the ISS from the Kibo deployer, December 2024. Photo: NASA.">
-  <Image src={cubesatEjected} alt="A small CubeSat drifts away from the space station's robotic arm, with the Earth's limb below" widths={[480, 800, 1200]} sizes="(min-width: 1024px) 680px, 100vw" class="block h-auto w-full" />
+<Figure slot="figure" caption="Students display the CubeSat and one of its circuit boards. Photo: Matthew Modoono/Northeastern University.">
+  <Image src={provesDisplay} alt="Two students hold a CubeSat and a black circuit board between them, with yellow tape measures extended" widths={[480, 800, 1200]} sizes="(min-width: 1024px) 680px, 100vw" class="block h-auto w-full" loading="eager" />
 </Figure>
 
   In April 2026, Northeastern went to space for the first time: a student-built CubeSat, deployed from the
@@ -48,6 +52,23 @@ import cubesatEjected from '../../assets/photos/nasa-cubesat-ejected.jpg';
   network on amateur radio bands, with the satellites relaying signals to one another. Its scope has since evolved, but
   all five remain on track to launch together. Atlas is Northeastern's first spacecraft.
 </Mission>
+
+<Section>
+<div class="grid gap-6 sm:grid-cols-2">
+  <Figure caption="Members of the PROVES team with the satellite's boards and flight hardware. Photo: Margot Murphy/The Huntington News.">
+    <Image src={peopleProves} alt="Five students look up at the camera from around a table covered in CubeSat boards and tools" widths={[480, 800, 1200]} sizes="(min-width: 1024px) 340px, 100vw" class="block h-auto w-full" />
+  </Figure>
+  <Figure caption="Flight computer board with the S-band radio, labeled “PROVES Proud!” Photo: Margot Murphy/The Huntington News.">
+    <Image src={provesPcb} alt="Close-up of a black circuit board with an S-band radio module and wiring in the foreground" widths={[480, 800, 1200]} sizes="(min-width: 1024px) 340px, 100vw" class="block h-auto w-full" />
+  </Figure>
+  <Figure caption="A student assembles the CubeSat with a screwdriver. Photo: Matthew Modoono/Northeastern University.">
+    <Image src={provesWork} alt="A student's hands tighten a screw on a CubeSat with solar panels, tape measures in the foreground" widths={[480, 800, 1200]} sizes="(min-width: 1024px) 340px, 100vw" class="block h-auto w-full" />
+  </Figure>
+  <Figure caption="A student-built CubeSat leaves the ISS from the Kibo deployer, December 2024. Photo: NASA.">
+    <Image src={cubesatEjected} alt="A small CubeSat drifts away from the space station's robotic arm, with the Earth's limb below" widths={[480, 800, 1200]} sizes="(min-width: 1024px) 340px, 100vw" class="block h-auto w-full" />
+  </Figure>
+</div>
+</Section>
 
 <Section>
 <p class="text-alice/80"><a href="/projects">All projects</a></p>
