@@ -1,3 +1,24 @@
+## Project layout
+
+Astro site with MDX pages, Tailwind v4, deployed to Cloudflare Workers. `README.md` has the full guide for
+content updates; the essentials:
+
+- One file per URL in `src/pages/`. Most are `.mdx` using `layouts/PageLayout.astro`, with frontmatter
+  `title`, `description`, `heading`, `lead`. `index.astro` and `contact.astro` are plain Astro.
+- Every component is re-exported from `src/components/index.ts`, so pages use one import line.
+  Each component's props are documented in a comment at the top of its file.
+- Content that lives outside the page text: nav, contact email, social and join links in
+  `src/components/site/links.ts`; team blurbs in `src/components/site/teams.ts`; home-page project
+  statuses (`work`) and press list (`press`) at the top of `src/pages/index.astro`; shared text in `src/partials/`.
+- Colors are a fixed palette in `src/styles/global.css` (`ink`, `prussian`, `dusk`, `slate`, `clay`,
+  `alice`, `white`, `line`). Default Tailwind colors don't exist, so don't use classes like `text-red-500`.
+- In MDX, leave a blank line between an opening HTML/component tag and Markdown inside it, or the
+  Markdown won't be parsed.
+- The contact and mailing-list forms have no backend. They open a `mailto:` link.
+- Run `pnpm build` to check changes. There is no test suite.
+- When people, schedule, or project details change, check for duplicates across `index.astro`,
+  `this-semester.mdx`, `people.mdx`, and `projects.mdx` and update them together.
+
 ## Development
 
 When starting the dev server, use background mode:
